@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Marwan ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle, #c90032, #650014, #240000);
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: Georgia, serif;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  z-index: 5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: clamp(38px, 9vw, 70px);
+  text-shadow: 0 0 20px pink, 0 0 40px red;
+  animation: pulse 1.5s infinite;
+}
+
+.message {
+  font-size: 25px;
+  margin-top: 25px;
+  line-height: 1.8;
+}
+
+.kiss {
+  font-size: 45px;
+  margin-top: 20px;
+}
+
+.candles {
+  display: flex;
+  gap: 25px;
+  margin-top: 35px;
+  font-size: 55px;
+}
+
+.small {
+  font-size: 18px;
+  margin-top: 30px;
+  color: #ffd5df;
+}
+
+.heart {
+  position: fixed;
+  bottom: -60px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.12); }
+}
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  width: 9px;
+  height: 14px;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(1000deg);
+    opacity: 0;
+  }
+}
+
+.burst {
+  position: fixed;
+  font-size: 35px;
+  pointer-events: none;
+  animation: explode 1.2s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>I LOVE YOU ❤️</h1>
+
+  <div class="message">
+    My Dearest Marwan ❤️
+    <br>
+    You are so special to me!
+    <br>
+    I LOVE YOU SO MUCH 💗
+  </div>
+
+  <div class="kiss">
+    💋 ❤️ 💋 ❤️
+  </div>
+
+  <div class="candles">
+    🕯️ ❤️ 🕯️ ❤️ 🕯️
+  </div>
+
+  <div class="small">
+    Made with Love, Just For You ❤️
+  </div>
+
+</div>
+
+<script>
+
+// قلوب لا نهائية
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+
+  const hearts = ["❤️", "💗", "💕", "💖", "💘"];
+
+  heart.innerHTML = hearts[
+    Math.floor(Math.random() * hearts.length)
+  ];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (20 + Math.random() * 35) + "px";
+  heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(createHeart, 100);
+
+
+// قصاصات حفلات عيد الميلاد
+function createConfetti() {
+  const confetti = document.createElement("div");
+  confetti.className = "confetti";
+
+  const colors = [
+    "#ffeb3b", "#ff69b4", "#00ffff",
+    "#ffffff", "#ff9900", "#ff0000",
+    "#baff39", "#c77dff"
+  ];
+
+  confetti.style.background =
+    colors[Math.floor(Math.random() * colors.length)];
+
+  confetti.style.left = Math.random() * 100 + "vw";
+  confetti.style.animationDuration =
+    (2 + Math.random() * 3) + "s";
+
+  document.body.appendChild(confetti);
+
+  setTimeout(() => confetti.remove(), 5000);
+}
+
+setInterval(createConfetti, 35);
+
+
+// فرقعات واحتفالات
+function fireworks() {
+  const burst = document.createElement("div");
+  burst.className = "burst";
+
+  const symbols = ["🎉", "🎊", "✨", "💥", "🎆", "🎇"];
+
+  burst.innerHTML =
+    symbols[Math.floor(Math.random() * symbols.length)];
+
+  burst.style.left = Math.random() * 90 + "vw";
+  burst.style.top = Math.random() * 85 + "vh";
+
+  document.body.appendChild(burst);
+
+  setTimeout(() => burst.remove(), 1300);
+}
+
+setInterval(fireworks, 180);
+
+</script>
+
+</body>
+</html>
